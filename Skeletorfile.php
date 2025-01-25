@@ -29,6 +29,12 @@ return function (Skeletor $skeletor) {
 
                 $skeletor->exec(['php', 'artisan', 'inertia:middleware']);
 
+                $imports = <<<PHP
+                use Illuminate\Foundation\Configuration\Middleware;
+                use App\Http\Middleware\HandleInertiaRequests;
+                PHP;
+
+                $skeletor->replaceInFile('use Illuminate\Foundation\Configuration\Middleware;', $imports, 'bootstrap/app.php');
                 $skeletor->replaceInFile('    ->withMiddleware(function (Middleware $middleware) {
         //
     })', '->withMiddleware(function (Middleware $middleware) {
