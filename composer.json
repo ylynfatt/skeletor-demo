@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "starter/laravel-inertia",
+    "name": "ylynfatt/skeletor-demo",
     "type": "project",
     "description": "The skeleton application for the Laravel framework which includes InertiaJS.",
     "keywords": [
